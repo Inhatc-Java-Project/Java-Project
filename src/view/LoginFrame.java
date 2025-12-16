@@ -34,7 +34,7 @@ public class LoginFrame extends javax.swing.JFrame {
         initComponents();
         refreshCaptcha();
     }
-
+    
     private void initComponents() {
         idField = new JTextField();
         passwordField = new JPasswordField();
@@ -151,6 +151,10 @@ public class LoginFrame extends javax.swing.JFrame {
             statusLabel.setForeground(new Color(0, 128, 0));
             statusLabel.setText("로그인 성공! 환영합니다, " + user.getName() + "님");
             JOptionPane.showMessageDialog(this, "로그인 성공");
+
+            new MainFrame(user.getId()).setVisible(true);
+
+            this.dispose();
         }
     }
 
